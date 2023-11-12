@@ -1,0 +1,14 @@
+C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.0\GardenPlotPlanner.csproj.AssemblyReference.cache
+C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.0\GardenPlotPlanner.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.0\GardenPlotPlanner.AssemblyInfoInputs.cache
+C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.0\GardenPlotPlanner.AssemblyInfo.cs
+C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.0\GardenPlotPlanner.csproj.CoreCompileInputs.cache
+C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\bin\Debug\netcoreapp3.0\GardenPlotPlanner.exe
+C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\bin\Debug\netcoreapp3.0\GardenPlotPlanner.deps.json
+C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\bin\Debug\netcoreapp3.0\GardenPlotPlanner.runtimeconfig.json
+C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\bin\Debug\netcoreapp3.0\GardenPlotPlanner.runtimeconfig.dev.json
+C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\bin\Debug\netcoreapp3.0\GardenPlotPlanner.dll
+C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\bin\Debug\netcoreapp3.0\GardenPlotPlanner.pdb
+C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.0\GardenPlotPlanner.dll
+C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.0\GardenPlotPlanner.pdb
+C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.0\GardenPlotPlanner.genruntimeconfig.cache
