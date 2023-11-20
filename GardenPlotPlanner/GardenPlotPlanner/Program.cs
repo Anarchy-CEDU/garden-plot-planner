@@ -24,14 +24,16 @@ namespace GardenPlotPlanner
 
 
             mc.InsertInto("m1", new[] { "m2", "m3", "m4" });
-            mc.InsertInto("m4", "m5");
+            mc.InsertInto("m3", "m5");
             mc.InsertInto("m5", "m6");
 
-            mc.ShowInfo(new[] { "m4", "m5", "m6"});
+            //mc.ShowInfo(new[] { "m4", "m5", "m6"});
 
-            mc.DeleteModel("m5");
+            //mc.DeleteModel("m5");
+    
+            //mc.ShowInfo(new[] { "m4", "m5", "m6" });
 
-            mc.ShowInfo(new[] { "m4", "m5", "m6" });
+            mc.ShowTreeInfo("m1", "");
 
 
             //mc.ShowInfo(new[] { "m1", "m2", "m3", "m4" });

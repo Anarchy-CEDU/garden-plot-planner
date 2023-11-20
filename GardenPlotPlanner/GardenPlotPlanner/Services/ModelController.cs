@@ -17,8 +17,25 @@ namespace GardenPlotPlanner.Services
         }
 
         //Показать дерево моделей
-        public void ShowTreeInfo()
+        public void ShowTreeInfo(string startNode, string gap)
         {
+            Model node = FindModel(startNode);
+            Console.WriteLine(gap + node.Name);
+            try
+            {
+                if (node.InnerModels.Count > 0)
+                {
+                    gap += "-";
+                    foreach (string innerNode in node.InnerModels)
+                    {
+                        ShowTreeInfo(innerNode, gap);
+                    }
+                }
+            } catch
+            {
+                Console.WriteLine($"Не удалось найти узел {startNode}");
+            }
+            
 
         }
 
