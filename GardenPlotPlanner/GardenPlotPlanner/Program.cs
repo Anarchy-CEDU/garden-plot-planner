@@ -13,9 +13,18 @@ namespace GardenPlotPlanner
             //Точка входа в приложение
             //Отосюда будет вызываться главное представление
 
+            ProjectController pc = new ProjectController();
+
+            pc.CreateProject("newProject");
+
+            //pc.ShowInfo();
+
+
+
+
             ModelController mc = new ModelController();
 
-            mc.CreateModel("m1");
+            mc.CreateModel("ground");
             mc.CreateModel("m2");
             mc.CreateModel("m3");
             mc.CreateModel("m4");
@@ -23,20 +32,15 @@ namespace GardenPlotPlanner
             mc.CreateModel("m6");
 
 
-            mc.InsertInto("m1", new[] { "m2", "m3", "m4" });
+            mc.InsertInto("ground", new[] { "m2", "m3", "m4" });
             mc.InsertInto("m3", "m5");
             mc.InsertInto("m5", "m6");
 
-            //mc.ShowInfo(new[] { "m4", "m5", "m6"});
+            pc.LoadProject("newProject", mc);
 
-            //mc.DeleteModel("m5");
-    
-            //mc.ShowInfo(new[] { "m4", "m5", "m6" });
+            pc.ShowInfo("newProject");
 
-            mc.ShowTreeInfo("m1", "");
-
-
-            //mc.ShowInfo(new[] { "m1", "m2", "m3", "m4" });
+            //mc.ShowTreeInfo("m3", "");
 
         }
     }

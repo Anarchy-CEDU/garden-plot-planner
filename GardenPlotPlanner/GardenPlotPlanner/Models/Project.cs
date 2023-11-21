@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GardenPlotPlanner.Models;
+using GardenPlotPlanner.Services;
 
 namespace GardenPlotPlanner.Models
 {
@@ -17,8 +18,8 @@ namespace GardenPlotPlanner.Models
         public DateTime? DateCreated { get; set; }
         public string? Author { get; set; }
 
-        //Словарь всех моделей, которые есть в проекте
-        public Model? StartModel { get; set; }
+        //Контроллер моделей проекта
+        public ModelController ModelController { get; set; }
 
         public void Info()
         {

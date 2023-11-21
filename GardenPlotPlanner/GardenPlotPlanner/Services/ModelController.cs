@@ -17,7 +17,7 @@ namespace GardenPlotPlanner.Services
         }
 
         //Показать дерево моделей
-        public void ShowTreeInfo(string startNode, string gap)
+        public void ShowTreeInfo(string startNode, string? gap = "")
         {
             Model node = FindModel(startNode);
             Console.WriteLine(gap + node.Name);
@@ -181,15 +181,15 @@ namespace GardenPlotPlanner.Services
                     ExstractFrom(model.ParentModel, model.Name);
                     result.Add(deletedModel);
                     Models.Remove(model.Name);
-                    model = null;
                 }
+                return result;
             }
             catch
             {
                 return null;
             }
 
-            return result;
+            
 
         }
 
