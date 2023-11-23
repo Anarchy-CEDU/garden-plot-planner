@@ -16,31 +16,35 @@ namespace GardenPlotPlanner
             ProjectController pc = new ProjectController();
 
             pc.CreateProject("newProject");
+            //pc.CreateProject("newProject1");
+            pc.CreateModel("m1");
+            pc.CreateModel("m2");
+            pc.CreateModel("m3");
+            pc.CreateModel("m4");
+            pc.CreateModel("m5");
+            pc.CreateModel("m6");
 
+
+            pc.BindModels(new[] { "m2", "m3", "m4" });
+            pc.BindModels("m3", "m5");
+            pc.BindModels("m4", "m6");
+
+            //pc.ShowSelectedProject();
+            //pc.ShowProjectsList();
+            pc.SelectProject("newProject");
+            //pc.ShowSelectedProject();
+
+            pc.ShowInfo();
+
+            pc.UnbindModels("m4", "m6");
+
+            //pc.SelectProject("newProject1");
+            pc.ShowInfo();
+            //pc.DeleteProject();
             //pc.ShowInfo();
 
 
 
-
-            ModelController mc = new ModelController();
-
-            mc.CreateModel("ground");
-            mc.CreateModel("m2");
-            mc.CreateModel("m3");
-            mc.CreateModel("m4");
-            mc.CreateModel("m5");
-            mc.CreateModel("m6");
-
-
-            mc.InsertInto("ground", new[] { "m2", "m3", "m4" });
-            mc.InsertInto("m3", "m5");
-            mc.InsertInto("m5", "m6");
-
-            pc.LoadProject("newProject", mc);
-
-            pc.ShowInfo("newProject");
-
-            //mc.ShowTreeInfo("m3", "");
 
         }
     }

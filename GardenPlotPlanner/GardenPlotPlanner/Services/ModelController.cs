@@ -136,9 +136,9 @@ namespace GardenPlotPlanner.Services
         {
             Model model = new Model()
             {
-                Type = (Models.Count == 0) ? "master-model" : "small_house",
+                Type = (Models.Count == 0) ? "ground" : "small_house",
                 Name = modelName,
-                SpriteName = "small_house_01",
+                SpriteName = (Models.Count == 0) ? "ground" : "small_house_01",
                 Width = 25,
                 Length = 50,
                 X = 0,
@@ -160,8 +160,6 @@ namespace GardenPlotPlanner.Services
         {
             return (Models.ContainsKey(name)) ? Models[name] : null;
         }
-
-        //Обновить модель
 
         //Удалить модель
         public List<Model> DeleteModel(string modelName, bool fullDelete = false)
@@ -194,12 +192,20 @@ namespace GardenPlotPlanner.Services
         }
 
         //Внедрить модель
+        public string InsertInto(string slaveName)
+        {
+            return InsertInto("ground", slaveName);
+        }
+        public List<string> InsertInto(string[] slavesNames)
+        {
+            return InsertInto("ground", slavesNames);
+        }
         public string InsertInto(string masterName, string slaveName)
         {
             Model master = FindModel(masterName);
             Model slave = FindModel(slaveName);
 
-            if (slave != null || master != null)
+            if (slave != null && master != null)
             {
                 try
                 {
@@ -213,6 +219,9 @@ namespace GardenPlotPlanner.Services
                 {
                     return null;
                 }
+            } else
+            {
+
             }
 
             return slaveName;
@@ -228,7 +237,7 @@ namespace GardenPlotPlanner.Services
 
             return result;
         }
-        private List<string> InsertInto(string masterName, List<string> slavesNames)
+        public List<string> InsertInto(string masterName, List<string> slavesNames)
         {
             List<string> result = new List<string>();
 
@@ -245,13 +254,19 @@ namespace GardenPlotPlanner.Services
         {
             Model master = FindModel(masterName);
             Model slave = FindModel(slaveName);
+            Model grand = FindModel(master.ParentModel);
+            if(grand == null)
+            {
+                grand.Name = "ground";
+            }
 
             try
             {
                 if (master.InnerModels.Contains(slaveName))
                 {
                     master.InnerModels.Remove(slaveName);
-                    InsertInto(slave.ParentModel, slave.InnerModels);
+                    
+                    InsertInto(grand.Name, slave.Name);
                 }
                 return slaveName;
             }

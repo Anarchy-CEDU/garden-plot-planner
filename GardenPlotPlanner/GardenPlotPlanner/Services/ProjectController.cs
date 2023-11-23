@@ -13,11 +13,16 @@ namespace GardenPlotPlanner.Services
     public class ProjectController
     {
         public SortedDictionary<string, Project> Projects { get; }
-
+        public Project SelectedProject { get; set; }
+        private ModelController SPModelController { get; set; }
         public ProjectController()
         {
             Projects = new SortedDictionary<string, Project>();
+            SelectedProject = new Project();
+            SPModelController = new ModelController();
         }
+
+
 
         //Создать проект
         public bool CreateProject(string projectName)
@@ -27,13 +32,20 @@ namespace GardenPlotPlanner.Services
                 Project project = new Project()
                 {
                     Name = projectName,
-                    Description = "New ptoject",
+                    Description = "New project",
                     DateCreated = DateTime.Now,
                     Author = "Guest",
                     ModelController = new ModelController()
                 };
 
+                SelectedProject = project;
+                SPModelController = project.ModelController;
+                SPModelController.CreateModel("ground");
+
+
                 Projects.Add(projectName, project);
+
+
                 return true;
             } else
             {
@@ -41,6 +53,54 @@ namespace GardenPlotPlanner.Services
             }
 
             
+        }
+        //Выбрать проект
+        public string SelectProject(string projectName)
+        {
+            Project project = FindProject(projectName);
+            if (project != null)
+            {
+                SelectedProject = project;
+                SPModelController = project.ModelController;
+                return project.Name;
+            } else
+            {
+                return string.Empty;
+            }
+        }
+
+        //Создать модель в проекте
+        public string CreateModel(string modelName)
+        {
+            return SPModelController.CreateModel(modelName);
+        }
+
+        //Связать модели в проекте
+        public string BindModels(string slaveName)
+        {
+            return SPModelController.InsertInto(slaveName);
+        }
+        public string BindModels(string masterName, string slaveName)
+        {
+            return SPModelController.InsertInto(masterName, slaveName);
+        }
+        public List<string> BindModels(string[] slavesNames)
+        {
+            return SPModelController.InsertInto(slavesNames);
+        }
+
+        //Удалить связь между моделями
+        public string UnbindModels(string slaveName)
+        {
+            return SPModelController.ExstractFrom("ground",slaveName);
+        }
+        public string UnbindModels(string masterName, string slaveName)
+        {
+            return SPModelController.ExstractFrom(masterName, slaveName);
+        }
+        public List<string> UnbindModels(string masterName, string[] slavesNames)
+        {
+            return SPModelController.ExstractFrom(masterName, slavesNames);
         }
 
         //Найти проект в базе проектов
@@ -50,11 +110,10 @@ namespace GardenPlotPlanner.Services
         }
 
         //Показать информацию о проекте
-        public void ShowInfo(string projectName)
+        public void ShowInfo()
         {
-            Project project = FindProject(projectName);
 
-            if (project != null)
+            if (SelectedProject != null)
             {
                 var prop = typeof(Project).GetProperties();
 
@@ -63,23 +122,56 @@ namespace GardenPlotPlanner.Services
                     if (prop[i].Name == "ModelController")
                     {
                         Console.WriteLine($"{prop[i].Name} => -----------");
-                        project.ModelController.ShowTreeInfo("ground", null);
+                        SPModelController.ShowTreeInfo("ground", null);
 
                     }
                     else
                     {
-                        Console.WriteLine($"{prop[i].Name} => {prop[i].GetValue(project)}");
+                        Console.WriteLine($"{prop[i].Name} => {prop[i].GetValue(SelectedProject)}");
                     }
                 }
             }
             Console.WriteLine("--------------------------");
         }
+        public void ShowSelectedProject()
+        {
+            Console.WriteLine($"Текущий проект => {SelectedProject.Name}");
+            Console.WriteLine("--------------------------");
+        }
+        public void ShowProjectsList()
+        {
+            Console.WriteLine("Список созданных проектов:");
+            foreach(string pName in Projects.Keys)
+            {
+                Console.WriteLine($"{pName}");
+            }
+            Console.WriteLine("--------------------------");
+        }
 
         //Сохранить проект в файл
+        public string SaveProject(string projectName)
+        {
+            string filename = string.Empty;
+
+            //Реализовать алгоритм записи в файл
+            try
+            {
+                //Находим проект по имени
+
+                //Записываем данные проекта
+
+                return filename;
+            }
+            catch
+            {
+                return "Error";
+            }
+        }
 
         //Загрузить проект из файла
         public bool LoadProject(string projectName, ModelController models)
         {
+
             try
             {
                 Project project = FindProject(projectName);
@@ -93,15 +185,42 @@ namespace GardenPlotPlanner.Services
                 return false;
             }
         }
+        public bool LoadProject(string[] properties)
+        {
+            //Реализовать алгоритм загрузки из файла
+
+            //Создаём новый проект из распарсенных данных
+            //Смотрим на имя получившегося объекта
+
+            try
+            {
+                if (true)//Если проект с таким именем уже существует
+                {
+                    //Удалить существующий из списка
+                    //Добавить новый под тем же именем
+                }
+                else //Если проекта с таким именем нет
+                {
+                    //Добавить в список новый проект
+                }
+
+                return true;
+            } catch
+            {
+                return false;
+            }
+        }
 
         //Удалить проект
-        public Project DeleteProject(string projectName)
+        public Project DeleteProject()
         {
-            Project project = FindProject(projectName);
+            Project project = SelectedProject;
 
             try
             {
                 Projects.Remove(project.Name);
+                SelectedProject = null;
+                SPModelController = null;
                 return project;
             }
             catch

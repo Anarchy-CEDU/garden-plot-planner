@@ -15,12 +15,10 @@ namespace GardenPlotPlanner.Models
         //Размеры
         public int? Width { get; set; }
         public int? Length { get; set; }
-        //--
 
         //Координаты
         public int? X { get; set; }
         public int? Y { get; set; }
-        //--
 
         //Высота
         public int? SelfLevel { get; set; }
@@ -33,7 +31,5 @@ namespace GardenPlotPlanner.Models
         public bool? CanContain {  get; set; }
         //Список вложенных моделей
         public List<string>? InnerModels { get; set; }
-
-
     }
 }
