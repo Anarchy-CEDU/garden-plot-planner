@@ -5,8 +5,196 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GardenPlotPlanner.Views"
         mc:Ignorable="d"
-        Title="App" Height="450" Width="800">
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        Title="Проектировщик садового участка" Height="600" Width="1000">
+    <Window.Resources>
+        <ControlTemplate x:Key="Button">
+            <Button Padding="5"/>
+        </ControlTemplate>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu IsMainMenu="True" HorizontalAlignment="Stretch" Grid.Row="0">
+            <MenuItem Header="Файл" >
+                <MenuItem Header="Создать" Command=""/>
+                <MenuItem Header="Открыть" Command=""/>
+                <Separator/>
+                <MenuItem Header="Закрыть проект" Command=""/>
+                <Separator/>
+                <MenuItem Header="Выход"/>
+            </MenuItem>
+            <MenuItem Header="Правка" >
+                <MenuItem Header="Копировать" Command=""/>
+                <MenuItem Header="Вставить" Command=""/>
+            </MenuItem>
+            <MenuItem Header="Вид" >
+                <MenuItem Header="Панель свойств" Command=""/>
+                <MenuItem Header="Панель выбора строений" Command=""/>
+            </MenuItem>
+        </Menu>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <Button Command="">
+                <Image Source="/Icons/iconCreate.png"/>
+            </Button>
+            <Button Command="">
+                <Image Source="/Icons/iconOpen.png"/>
+            </Button>
+            <Button Command="">
+                <Image Source="/Icons/iconSave.png"/>
+            </Button>
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="{x:Null}"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Padding" Value="2 2"/>
+                </Style>
+            </StackPanel.Resources>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" BorderThickness="1" BorderBrush="Black">
+                <StackPanel>
+                    <Button Command="{Binding OnChangeTypeBuilding}" CommandParameter="1">
+                        <Image Source="/Icons/iconHome.png"/>
+                    </Button>
+                    <StackPanel.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="{x:Null}"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Padding" Value="2 2"/>
+                        </Style>
+                    </StackPanel.Resources>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black">
+                <ListBox ItemsSource="{Binding Buildings}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Width="100">
+                                <Image Source="{Binding ImageSource}"/>
+                                <TextBlock Text="{Binding Name}" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Border>
+
+            <GridSplitter Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="5"/>
+
+            <Grid Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1">
+                    <Canvas x:Name="c1" IsHitTestVisible="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                            Background="Gray" ClipToBounds="True" >
+                        <ItemsControl ItemsSource="{Binding Models, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <Canvas IsItemsHost="True"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewMouseLeave">
+                                <i:InvokeCommandAction Command="{Binding OnPreviewMouseLeave}" PassEventArgsToCommand="True"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseDown">
+                                <i:InvokeCommandAction Command="{Binding OnPreviewMouseDown}" PassEventArgsToCommand="True"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseMove">
+                                <i:InvokeCommandAction Command="{Binding OnPreviewMouseMove}" PassEventArgsToCommand="True"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                                <i:InvokeCommandAction Command="{Binding OnPreviewMouseUp}" PassEventArgsToCommand="True"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Canvas>
+                </Border>
+                <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <Border Grid.Row="2" BorderThickness="1" BorderBrush="Black">
+                    <ListBox ItemsSource="{Binding}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Image/>
+                                    <TextBlock/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Border>
+            </Grid>
+            <GridSplitter Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="5"/>
+            <Border Grid.Column="5" BorderThickness="1" BorderBrush="Black">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="Свойства объекта" TextAlignment="Center" FontSize="20"/>
+                    <Separator Grid.Row="1" Height="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="Black" />
+                    <TextBlock Grid.Row="2" Text="Название объекта" TextAlignment="Left" Margin="10 0" FontSize="20"/>
+                    <TextBox Grid.Row="3" IsReadOnly="True" Margin="10 5"/>
+                    <GroupBox Grid.Row="4" Header="Координаты">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="5"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel  Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                                <TextBlock Text="X:" Padding="7 0 3 0"/>
+                                <TextBox Width="40"/>
+                            </StackPanel>
+                            <StackPanel  Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                                <TextBlock Text="Y:" Padding="4 0 3 0"/>
+                                <TextBox Width="40"/>
+                            </StackPanel>
+
+                            <StackPanel  Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
+                                <TextBlock Text="W:" Padding="3 0 3 0"/>
+                                <TextBox Width="40"/>
+                            </StackPanel>
+                            <StackPanel  Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                                <TextBlock Text="H:" Padding="3 0 3 0"/>
+                                <TextBox Width="40" />
+                            </StackPanel>
+
+                            <StackPanel  Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock Text="A:" Padding="3 0 3 0"/>
+                                <TextBox Width="40"/>
+                            </StackPanel>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
 </Window>

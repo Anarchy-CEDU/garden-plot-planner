@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dgeli\\OneDrive\\Desktop\\Практикум\\Git\\garden-plot-planner\\GardenPlotPlanner\\GardenPlotPlanner\\GardenPlotPlanner.csproj": {}
+    "j:\\Проектный практикум\\1 семестр\\garden-plot-planner\\GardenPlotPlanner\\GardenPlotPlanner\\GardenPlotPlanner.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dgeli\\OneDrive\\Desktop\\Практикум\\Git\\garden-plot-planner\\GardenPlotPlanner\\GardenPlotPlanner\\GardenPlotPlanner.csproj": {
+    "j:\\Проектный практикум\\1 семестр\\garden-plot-planner\\GardenPlotPlanner\\GardenPlotPlanner\\GardenPlotPlanner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dgeli\\OneDrive\\Desktop\\Практикум\\Git\\garden-plot-planner\\GardenPlotPlanner\\GardenPlotPlanner\\GardenPlotPlanner.csproj",
+        "projectUniqueName": "j:\\Проектный практикум\\1 семестр\\garden-plot-planner\\GardenPlotPlanner\\GardenPlotPlanner\\GardenPlotPlanner.csproj",
         "projectName": "GardenPlotPlanner",
-        "projectPath": "C:\\Users\\dgeli\\OneDrive\\Desktop\\Практикум\\Git\\garden-plot-planner\\GardenPlotPlanner\\GardenPlotPlanner\\GardenPlotPlanner.csproj",
-        "packagesPath": "C:\\Users\\dgeli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dgeli\\OneDrive\\Desktop\\Практикум\\Git\\garden-plot-planner\\GardenPlotPlanner\\GardenPlotPlanner\\obj\\",
+        "projectPath": "j:\\Проектный практикум\\1 семестр\\garden-plot-planner\\GardenPlotPlanner\\GardenPlotPlanner\\GardenPlotPlanner.csproj",
+        "packagesPath": "C:\\Users\\igor\\.nuget\\packages\\",
+        "outputPath": "j:\\Проектный практикум\\1 семестр\\garden-plot-planner\\GardenPlotPlanner\\GardenPlotPlanner\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\dgeli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +27,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,14 +44,19 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.Xaml.Behaviors.Wpf": {
+              "target": "Package",
+              "version": "[1.1.31, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -63,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
         }
       }
     }

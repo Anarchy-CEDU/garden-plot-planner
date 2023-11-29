@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="GardenPlotPlanner.Views.BuildingModel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GardenPlotPlanner.Views"
+             mc:Ignorable="d" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             Canvas.Left="{Binding CordX, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Canvas.Top="{Binding CordY, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" RenderTransformOrigin="0.5,0.5" >
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Active}" Value="False">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Line">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Active}" Value="False">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Grid.Column="0"  Width="{Binding Width}" Height="{Binding Height}" Source="{Binding ImageSource}" Stretch="Uniform" Visibility="Visible" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDown">
+                    <i:InvokeCommandAction Command="{Binding OnMouseDownIcon}" PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Image>
+        <!--<Rectangle Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" StrokeThickness="1" StrokeLineJoin="Bevel" Stroke="Black"/>-->
+        <Line Grid.Row="0" X1="0" Y1="0" X2="{Binding Width}" Y2="0" Stroke="Black" StrokeThickness="2" Cursor="SizeNS"/>
+        <Line Grid.Row="0" X1="0" Y1="0" X2="0" Y2="{Binding Height}" Stroke="Black" StrokeThickness="2" Cursor="SizeWE"/>
+        <Line Grid.Row="0" X1="{Binding Width}" Y1="0" X2="{Binding Width}" Y2="{Binding Height}" Stroke="Black" StrokeThickness="2" Cursor="SizeWE"/>
+        <Line Grid.Row="0" X1="0" Y1="{Binding Height}" X2="{Binding Width}" Y2="{Binding Height}" Stroke="Black" StrokeThickness="2" Cursor="SizeNS"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Width}" Margin="0 3 0 0" HorizontalAlignment="Center" />
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Height}" Margin="3 0 0 0" VerticalAlignment="Center" />
+    </Grid>
+</UserControl>

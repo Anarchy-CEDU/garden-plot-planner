@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "x6n8/SZw95vD9xaXNMKdUzyaB0j97vDvr0WjL2DMLtkBqPjAm8onVlyIRbuqWeiYu5C+K2hLNjlvILo17iLvAA==",
+  "dgSpecHash": "gLMJqUZpW56wrMjOUqwpWnMg5Z7SQyt4wlLt6ml6Meo5aPRz5pzlGWLIwJxAACQ+vbn/rTwcSy38npSMmmKBOg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dgeli\\OneDrive\\Desktop\\Практикум\\Git\\garden-plot-planner\\GardenPlotPlanner\\GardenPlotPlanner\\GardenPlotPlanner.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "j:\\Проектный практикум\\1 семестр\\garden-plot-planner\\GardenPlotPlanner\\GardenPlotPlanner\\GardenPlotPlanner.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\igor\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512"
+  ],
   "logs": []
 }

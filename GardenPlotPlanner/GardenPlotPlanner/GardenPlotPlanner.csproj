@@ -18,4 +18,29 @@
     <WarningLevel>7</WarningLevel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Icons\iconCreate.png" />
+    <None Remove="Icons\iconHome.png" />
+    <None Remove="Icons\iconOpen.png" />
+    <None Remove="Icons\iconSave.png" />
+    <None Remove="Images\modeldom.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\modeldom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\iconCreate.png" />
+    <Resource Include="Icons\iconHome.png" />
+    <Resource Include="Icons\iconOpen.png" />
+    <Resource Include="Icons\iconSave.png" />
+  </ItemGroup>
+
 </Project>

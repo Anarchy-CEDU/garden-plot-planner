@@ -1,5 +1,4 @@
-﻿using GardenPlotPlanner.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -9,19 +8,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace GardenPlotPlanner.Views
 {
     /// <summary>
-    /// Логика взаимодействия для App.xaml
+    /// Логика взаимодействия для BuildingModel.xaml
     /// </summary>
-    public partial class App : Window
+    public partial class BuildingModel : UserControl
     {
-        public App()
+        public BuildingModel()
         {
             InitializeComponent();
-            DataContext = new AppVM();
         }
     }
 }

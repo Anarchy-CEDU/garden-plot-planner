@@ -17,3 +17,28 @@ C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\Garde
 C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\GardenPlotPlanner_MarkupCompile.lref
 C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\Views\App.baml
 C:\Users\dgeli\OneDrive\Desktop\Практикум\Git\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\GardenPlotPlanner.g.resources
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\bin\Debug\netcoreapp3.1\GardenPlotPlanner.exe
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\bin\Debug\netcoreapp3.1\GardenPlotPlanner.deps.json
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\bin\Debug\netcoreapp3.1\GardenPlotPlanner.runtimeconfig.json
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\bin\Debug\netcoreapp3.1\GardenPlotPlanner.runtimeconfig.dev.json
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\bin\Debug\netcoreapp3.1\GardenPlotPlanner.dll
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\bin\Debug\netcoreapp3.1\GardenPlotPlanner.pdb
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\GardenPlotPlanner.csproj.AssemblyReference.cache
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\Views\App.g.cs
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\GardenPlotPlanner_MarkupCompile.cache
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\GardenPlotPlanner_MarkupCompile.lref
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\Views\App.baml
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\GardenPlotPlanner.g.resources
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\GardenPlotPlanner.GeneratedMSBuildEditorConfig.editorconfig
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\GardenPlotPlanner.AssemblyInfoInputs.cache
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\GardenPlotPlanner.AssemblyInfo.cs
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\GardenPlotPlanner.csproj.CoreCompileInputs.cache
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\GardenPlotPlanner.dll
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\GardenPlotPlanner.pdb
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\GardenPlotPlanner.genruntimeconfig.cache
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\GardenPlotPlanner_Content.g.cs
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\Views\BuildingModel.g.cs
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\bin\Debug\netcoreapp3.1\Images\modeldom.png
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\bin\Debug\netcoreapp3.1\Microsoft.Xaml.Behaviors.dll
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\Views\BuildingModel.baml
+j:\Проектный практикум\1 семестр\garden-plot-planner\GardenPlotPlanner\GardenPlotPlanner\obj\Debug\netcoreapp3.1\GardenPlotPlanner.csproj.CopyComplete
