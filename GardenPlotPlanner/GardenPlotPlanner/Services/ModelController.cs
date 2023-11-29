@@ -89,43 +89,75 @@ namespace GardenPlotPlanner.Services
             Model model;
             if (properties == null || properties.Length != typeof(Model).GetProperties().Length)
             {
-                model = new()
-                {
-                    Type = "small_house",
-                    Name = "smallHouse*",
-                    SpriteName = "small_house_01",
-                    Width = 25,
-                    Length = 50,
-                    X = 0,
-                    Y = 0,
-                    SelfLevel = 1,
-                    LevelsCount = 1,
-                    MaxLevel = 1,
-                    ParentModel = string.Empty,
-                    CanContain = false,
-                    InnerModels = null,
+                //model = new()
+                //{
+                //    Type = "small_house",
+                //    Name = "smallHouse*",
+                //    SpriteName = "small_house_01",
+                //    Width = 25,
+                //    Length = 50,
+                //    X = 0,
+                //    Y = 0,
+                //    SelfLevel = 1,
+                //    LevelsCount = 1,
+                //    MaxLevel = 1,
+                //    ParentModel = string.Empty,
+                //    CanContain = false,
+                //    InnerModels = null,
 
-                };
+                //};
+
+                model = new Model();
+                model.Type = "small_house";
+                model.Name = "smallHouse";
+                model.SpriteName = "small_house_01";
+                model.Width = 25;
+                model.Length = 50;
+                model.X = 0;
+                model.Y = 0;
+                model.SelfLevel = 1;
+                model.LevelsCount = 1;
+                model.MaxLevel = 1;
+                model.ParentModel = string.Empty;
+                model.CanContain = false;
+                model.InnerModels = null;
+
             }
             else
             {
-                model = new()
-                {
-                    Type = properties[0],
-                    Name = properties[1],
-                    SpriteName = properties[2],
-                    Width = int.Parse(properties[3]),
-                    Length = int.Parse(properties[4]),
-                    X = int.Parse(properties[5]),
-                    Y = int.Parse(properties[6]),
-                    SelfLevel = int.Parse(properties[7]),
-                    LevelsCount = int.Parse(properties[8]),
-                    MaxLevel = int.Parse(properties[9]),
-                    ParentModel = null,
-                    CanContain = bool.Parse(properties[11]),
-                    InnerModels = null, //!Настроитъ парсер списка вложенных моделей
+                //model = new()
+                //{
+                //    Type = properties[0],
+                //    Name = properties[1],
+                //    SpriteName = properties[2],
+                //    Width = int.Parse(properties[3]),
+                //    Length = int.Parse(properties[4]),
+                //    X = int.Parse(properties[5]),
+                //    Y = int.Parse(properties[6]),
+                //    SelfLevel = int.Parse(properties[7]),
+                //    LevelsCount = int.Parse(properties[8]),
+                //    MaxLevel = int.Parse(properties[9]),
+                //    ParentModel = null,
+                //    CanContain = bool.Parse(properties[11]),
+                //    InnerModels = null, //!Настроитъ парсер списка вложенных моделей
 
-                };
+                //};
+
+                model = new Model();
+                model.Type = properties[0];
+                model.Name = properties[1];
+                model.SpriteName = properties[2];
+                model.Width = int.Parse(properties[3]);
+                model.Length = int.Parse(properties[4]);
+                model.X = int.Parse(properties[5]);
+                model.Y = int.Parse(properties[6]);
+                model.SelfLevel = int.Parse(properties[7]);
+                model.LevelsCount = int.Parse(properties[8]);
+                model.MaxLevel = int.Parse(properties[9]);
+                model.ParentModel = null;
+                model.CanContain = bool.Parse(properties[11]);
+                model.InnerModels = null;
+
             }
 
             Models.Add(model.Name, model);
